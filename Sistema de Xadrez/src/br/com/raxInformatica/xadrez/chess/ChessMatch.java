@@ -1,13 +1,13 @@
 package br.com.raxInformatica.xadrez.chess;
 
 import br.com.raxInformatica.xadrez.boardgame.Board;
-import br.com.raxInformatica.xadrez.boardgame.Position;
+import br.com.raxInformatica.xadrez.chess.pieces.ChessPosition;
 import br.com.raxInformatica.xadrez.chess.pieces.King;
 import br.com.raxInformatica.xadrez.chess.pieces.Rook;
 
 public class ChessMatch {
 
-    private Board board;
+    private final Board board;
 
     public ChessMatch(){
         board = new Board(8,8);
@@ -24,9 +24,13 @@ public class ChessMatch {
         return mat;
     }
 
+    private void placeNewPiece(char column, int row, ChessPiece piece){
+        board.placePiece(piece, new ChessPosition(column,row).toPosition());
+    }
+
     private void initialSetup() {
-        board.placePiece(new Rook(board, Color.WHITE), new Position(2,1));
-        board.placePiece(new Rook(board, Color.BLACK), new Position(5,6));
-        board.placePiece(new King(board, Color.BLACK), new Position(7,4));
+        placeNewPiece('b',6, new Rook(board, Color.BLACK));
+        placeNewPiece('e',8, new King(board, Color.WHITE));
+        placeNewPiece('e',1, new King(board,Color.BLACK));
     }
 }
