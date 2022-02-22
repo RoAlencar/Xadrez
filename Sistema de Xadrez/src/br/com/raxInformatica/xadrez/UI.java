@@ -1,5 +1,6 @@
 package br.com.raxInformatica.xadrez;
 
+import br.com.raxInformatica.xadrez.chess.ChessMatch;
 import br.com.raxInformatica.xadrez.chess.ChessPiece;
 import br.com.raxInformatica.xadrez.chess.Color;
 import br.com.raxInformatica.xadrez.chess.ChessPosition;
@@ -70,6 +71,12 @@ public class UI {
             }
         }
         System.out.print(" ");
+    }
+
+    public static void printMatch(ChessMatch chessMatch) {
+        printBoard(chessMatch.getPieces());
+        System.out.println("\nTurn : " + chessMatch.getTurn());
+        System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
     }
 
     public static void printBoard(ChessPiece[][] pieces, boolean [][] possibleMoves) {
