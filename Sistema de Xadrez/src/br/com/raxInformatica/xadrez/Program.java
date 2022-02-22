@@ -3,9 +3,8 @@ package br.com.raxInformatica.xadrez;
 import br.com.raxInformatica.xadrez.chess.ChessMatch;
 import br.com.raxInformatica.xadrez.chess.ChessPiece;
 import br.com.raxInformatica.xadrez.chess.exception.ChessException;
-import br.com.raxInformatica.xadrez.chess.pieces.ChessPosition;
+import br.com.raxInformatica.xadrez.chess.ChessPosition;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

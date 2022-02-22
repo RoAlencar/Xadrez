@@ -3,7 +3,7 @@ package br.com.raxInformatica.xadrez.chess;
 import br.com.raxInformatica.xadrez.boardgame.Board;
 import br.com.raxInformatica.xadrez.boardgame.Piece;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     private Color color;
 

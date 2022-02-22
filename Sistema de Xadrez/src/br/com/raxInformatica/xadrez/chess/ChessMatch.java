@@ -4,7 +4,6 @@ import br.com.raxInformatica.xadrez.boardgame.Board;
 import br.com.raxInformatica.xadrez.boardgame.Piece;
 import br.com.raxInformatica.xadrez.boardgame.Position;
 import br.com.raxInformatica.xadrez.chess.exception.ChessException;
-import br.com.raxInformatica.xadrez.chess.pieces.ChessPosition;
 import br.com.raxInformatica.xadrez.chess.pieces.King;
 import br.com.raxInformatica.xadrez.chess.pieces.Rook;
 
@@ -46,9 +45,10 @@ public class ChessMatch {
         if(!board.thereIsAPiece(position)) {
             throw new ChessException("There is no piece on source position");
         }
+        if(!board.piece(position).isThereAnyPossibleMove()){
+            throw new ChessException("Theres is no possible moves for the chose piece");
+        }
     }
-
-
 
     private void placeNewPiece(char column, int row, ChessPiece piece){
         board.placePiece(piece, new ChessPosition(column,row).toPosition());

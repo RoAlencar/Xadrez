@@ -1,4 +1,4 @@
-package br.com.raxInformatica.xadrez.chess.pieces;
+package br.com.raxInformatica.xadrez.chess;
 
 import br.com.raxInformatica.xadrez.boardgame.Position;
 import br.com.raxInformatica.xadrez.chess.exception.ChessException;
