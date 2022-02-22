@@ -2,6 +2,7 @@ package br.com.raxInformatica.xadrez.chess;
 
 import br.com.raxInformatica.xadrez.boardgame.Board;
 import br.com.raxInformatica.xadrez.boardgame.Piece;
+import br.com.raxInformatica.xadrez.boardgame.Position;
 
 public abstract class ChessPiece extends Piece {
 
@@ -14,5 +15,10 @@ public abstract class ChessPiece extends Piece {
 
     public Color getColor() {
         return color;
+    }
+
+    protected boolean isThereOpponnentPiece(Position position){
+        ChessPiece p = (ChessPiece) getBoard().piece(position);
+        return p !=null &&p.getColor() != color;
     }
 }
